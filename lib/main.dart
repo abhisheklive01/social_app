@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:social_app/login.dart';
 
+import 'home_scree.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LoginPage(),
+      home: HomeScreen(),
     );
   }
 }
