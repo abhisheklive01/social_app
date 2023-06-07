@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:social_app/login.dart';
+import 'package:social_app/signup.dart';
 
 import 'home_scree.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomeScreen(),
+      home: SignUpScreen(),
     );
   }
 }

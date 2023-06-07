@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:social_app/login.dart';
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+  SignUpScreen({super.key});
+  final TextEditingController _usernameController = TextEditingController();
+
+  submit() {
+    print(_usernameController.text);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +21,7 @@ class SignUpScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(
+                controller: _usernameController,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(50)),
@@ -64,7 +70,9 @@ class SignUpScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(50)),
                         backgroundColor: Colors.red,
                         textStyle: const TextStyle(fontSize: 25)),
-                    onPressed: () {},
+                    onPressed: () {
+                      submit();
+                    },
                     child: const Text(
                       "Sign up",
                       style: TextStyle(
