@@ -1,7 +1,65 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
+
+  var storyCardList = [
+    {
+      'imageUrl':
+          'https://img.freepik.com/free-vector/realistic-samurai-illustrated-background_52683-69460.jpg?w=740&t=st=1686137185~exp=1686137785~hmac=390704896744102739b13593a6ee86ac579820b437588272dda37641c152fe9b',
+      'userName': 'user1',
+    },
+    {
+      'imageUrl':
+          'https://img.freepik.com/free-vector/little-blond-boy-anime_18591-77251.jpg?size=626&ext=jpg&ga=GA1.2.647470437.1685963067&semt=robertav1_2_sidr',
+      'userName': 'user2',
+    },
+    {
+      'imageUrl':
+          'https://img.freepik.com/premium-vector/heart-girl-anime-character_603843-485.jpg?size=626&ext=jpg&ga=GA1.2.647470437.1685963067&semt=robertav1_2_sidr',
+      'userName': 'user3',
+    },
+    {
+      'imageUrl':
+          'https://img.freepik.com/free-photo/girl-with-backpack-sunset-generative-al_169016-28612.jpg?size=338&ext=jpg&ga=GA1.1.647470437.1685963067&semt=robertav1_2_sidr',
+      'userName': 'user4',
+    },
+    {
+      'imageUrl':
+          'https://img.freepik.com/premium-vector/character-design-girl-bring-stick_286658-173.jpg?size=626&ext=jpg&ga=GA1.1.647470437.1685963067&semt=robertav1_2_sidr',
+      'userName': 'user5',
+    },
+    {
+      'imageUrl':
+          'https://img.freepik.com/premium-vector/heart-girl-anime-character_603843-485.jpg?size=626&ext=jpg&ga=GA1.2.647470437.1685963067&semt=robertav1_2_sidr',
+      'userName': 'user3',
+    },
+    {
+      'imageUrl':
+          'https://img.freepik.com/premium-vector/heart-girl-anime-character_603843-485.jpg?size=626&ext=jpg&ga=GA1.2.647470437.1685963067&semt=robertav1_2_sidr',
+      'userName': 'user3',
+    },
+    {
+      'imageUrl':
+          'https://img.freepik.com/premium-vector/heart-girl-anime-character_603843-485.jpg?size=626&ext=jpg&ga=GA1.2.647470437.1685963067&semt=robertav1_2_sidr',
+      'userName': 'user3',
+    },
+    {
+      'imageUrl':
+          'https://img.freepik.com/premium-vector/heart-girl-anime-character_603843-485.jpg?size=626&ext=jpg&ga=GA1.2.647470437.1685963067&semt=robertav1_2_sidr',
+      'userName': 'user3',
+    },
+    {
+      'imageUrl':
+          'https://img.freepik.com/premium-vector/heart-girl-anime-character_603843-485.jpg?size=626&ext=jpg&ga=GA1.2.647470437.1685963067&semt=robertav1_2_sidr',
+      'userName': 'user3',
+    },
+    {
+      'imageUrl':
+          'https://img.freepik.com/premium-vector/heart-girl-anime-character_603843-485.jpg?size=626&ext=jpg&ga=GA1.2.647470437.1685963067&semt=robertav1_2_sidr',
+      'userName': 'user3',
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -48,31 +106,18 @@ class HomeScreen extends StatelessWidget {
                           child: Icon(Icons.add_circle_outline_outlined))
                     ],
                   ),
-                  StoryCard(
-                    imageUrl:
-                        'https://cdn.pixabay.com/photo/2017/09/25/13/12/puppy-2785074_1280.jpg',
-                    userName: 'user 1',
-                  ),
-                  StoryCard(
-                    imageUrl:
-                        'https://cdn.pixabay.com/photo/2015/06/02/12/59/book-794978_1280.jpg',
-                    userName: 'user 2',
-                  ),
-                  StoryCard(
-                    imageUrl:
-                        'https://cdn.pixabay.com/photo/2017/09/25/13/12/puppy-2785074_1280.jpg',
-                    userName: 'user 3',
-                  ),
-                  StoryCard(
-                    imageUrl:
-                        'https://cdn.pixabay.com/photo/2017/09/25/13/12/puppy-2785074_1280.jpg',
-                    userName: 'user 4',
-                  ),
-                  StoryCard(
-                    imageUrl:
-                        'https://cdn.pixabay.com/photo/2017/09/25/13/12/puppy-2785074_1280.jpg',
-                    userName: 'user 5',
-                  ),
+                  ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: storyCardList.length,
+                      itemBuilder: (context, index) {
+                        print(index);
+                        return StoryCard(
+                          imageUrl: storyCardList[index]["imageUrl"]!,
+                          userName: storyCardList[index]["userName"]!,
+                        );
+                      })
                 ],
               ),
             ),

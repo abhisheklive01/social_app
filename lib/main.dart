@@ -4,6 +4,7 @@ import 'package:social_app/onboarding.dart';
 import 'package:social_app/signup.dart';
 import 'package:social_app/tabs.dart';
 
+import 'dashboard.dart';
 import 'home_scree.dart';
 import 'nav.dart';
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: OnBoarding(),
+      home: Dashboard(),
     );
   }
 }
